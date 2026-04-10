@@ -14,6 +14,9 @@
   "dependencies": {
     "@fontsource-variable/inter": "^5.2.8",
     "@fontsource-variable/roboto": "^5.2.10",
+    "@iconify-icons/fa-solid": "^1.2.4",
+    "@iconify-icons/simple-icons": "^1.2.74",
+    "@iconify/react": "^6.0.2",
     "@tailwindcss/vite": "^4.2.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
