@@ -1,6 +1,7 @@
 import {
   AboutSection,
   ContactSection,
+  Footer,
   Header,
   HeroSection,
   ProjectsSection,
@@ -17,6 +18,7 @@ export const HomePage = () => {
         <ProjectsSection />
         <AboutSection />
         <ContactSection />
+        <Footer />
       </menu>
     </>
   )
