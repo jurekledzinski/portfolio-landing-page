@@ -1,0 +1,37 @@
+import file from "@iconify-icons/fa-solid/file"
+import github from "@iconify-icons/simple-icons/github"
+import linkedin from "@iconify-icons/simple-icons/linkedin"
+import { Button } from "@/components"
+import { Icon } from "@iconify/react"
+
+export const ActionButtons = () => {
+  return (
+    <div className="mt-4 flex flex-col gap-6 px-4 lg:px-0">
+      <div className="flex gap-1">
+        <Button className="cursor-pointer rounded-xs bg-blue-600 px-6 py-5 text-white sm:px-8 sm:py-5">
+          View projects
+        </Button>
+        <Button
+          className="cursor-pointer rounded-xs px-6 py-5 sm:px-8 sm:py-5"
+          variant="outline"
+        >
+          Get in touch
+        </Button>
+      </div>
+      <div className="flex gap-1">
+        <Button
+          className="cursor-pointer rounded-xs bg-orange-600 text-white"
+          size="icon"
+        >
+          <Icon icon={file} />
+        </Button>
+        <Button className="cursor-pointer rounded-xs text-white" size="icon">
+          <Icon icon={linkedin} />
+        </Button>
+        <Button className="cursor-pointer rounded-xs text-white" size="icon">
+          <Icon icon={github} />
+        </Button>
+      </div>
+    </div>
+  )
+}
