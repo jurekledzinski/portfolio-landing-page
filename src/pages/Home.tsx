@@ -1,4 +1,10 @@
-import { Header, HeroSection, ProjectsSection, SkillsSection } from "@/features"
+import {
+  AboutSection,
+  Header,
+  HeroSection,
+  ProjectsSection,
+  SkillsSection,
+} from "@/features"
 
 export const HomePage = () => {
   return (
@@ -8,6 +14,7 @@ export const HomePage = () => {
         <HeroSection />
         <SkillsSection />
         <ProjectsSection />
+        <AboutSection />
       </menu>
     </>
   )
