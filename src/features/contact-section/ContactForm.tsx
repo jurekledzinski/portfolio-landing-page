@@ -106,7 +106,7 @@ export const ContactForm = ({ controls, onSubmit }: ContactFormProps) => {
       </FieldGroup>
 
       <Button
-        className="mt-4 cursor-pointer rounded-xs py-5 text-white"
+        className="mt-4 cursor-pointer rounded-xs py-5 text-white hover:bg-primary/90"
         type="submit"
       >
         Send Message

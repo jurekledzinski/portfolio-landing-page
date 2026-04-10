@@ -15,10 +15,16 @@ export const GetInTouch = () => {
       </p>
 
       <div className="mt-4 flex gap-1">
-        <Button className="cursor-pointer rounded-xs text-white" size="icon">
+        <Button
+          className="cursor-pointer rounded-xs text-white hover:bg-primary/90"
+          size="icon"
+        >
           <Icon icon={linkedin} />
         </Button>
-        <Button className="cursor-pointer rounded-xs text-white" size="icon">
+        <Button
+          className="cursor-pointer rounded-xs text-white hover:bg-primary/90"
+          size="icon"
+        >
           <Icon icon={github} />
         </Button>
       </div>

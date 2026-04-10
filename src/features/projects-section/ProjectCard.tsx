@@ -21,9 +21,13 @@ export const ProjectCard = ({
   title,
 }: ProjectCardProps) => {
   return (
-    <Card className="flex h-full flex-col rounded-xs [&>img:first-child]:rounded-none">
+    <Card className="flex h-full flex-col rounded-xs p-0 [&>img:first-child]:rounded-none">
       <div className="hover:bg-black/50">
-        <img src={image} alt={title} className="aspect-video object-cover" />
+        <img
+          src={image}
+          alt={title}
+          className="block aspect-video object-cover"
+        />
       </div>
 
       <CardHeader className="relative flex flex-col">
@@ -53,7 +57,7 @@ export const ProjectCard = ({
       </CardContent>
 
       <CardFooter className="mt-auto flex gap-1">
-        <Button className="cursor-pointer rounded-xs bg-orange-600 text-white">
+        <Button className="cursor-pointer rounded-xs bg-orange-600 text-white hover:bg-orange-600/90">
           Live demo
         </Button>
         <Button

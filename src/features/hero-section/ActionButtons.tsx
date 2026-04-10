@@ -8,7 +8,7 @@ export const ActionButtons = () => {
   return (
     <div className="mt-4 flex flex-col gap-6 px-4 lg:px-0">
       <div className="flex gap-1">
-        <Button className="cursor-pointer rounded-xs bg-blue-600 px-6 py-5 text-white sm:px-8 sm:py-5">
+        <Button className="cursor-pointer rounded-xs px-6 py-5 text-white hover:bg-primary/90 sm:px-8 sm:py-5">
           View projects
         </Button>
         <Button
@@ -20,15 +20,21 @@ export const ActionButtons = () => {
       </div>
       <div className="flex gap-1">
         <Button
-          className="cursor-pointer rounded-xs bg-orange-600 text-white"
+          className="cursor-pointer rounded-xs bg-orange-600 text-white hover:bg-orange-600/90"
           size="icon"
         >
           <Icon icon={file} />
         </Button>
-        <Button className="cursor-pointer rounded-xs text-white" size="icon">
+        <Button
+          className="cursor-pointer rounded-xs text-white hover:bg-primary/90"
+          size="icon"
+        >
           <Icon icon={linkedin} />
         </Button>
-        <Button className="cursor-pointer rounded-xs text-white" size="icon">
+        <Button
+          className="cursor-pointer rounded-xs text-white hover:bg-primary/90"
+          size="icon"
+        >
           <Icon icon={github} />
         </Button>
       </div>
