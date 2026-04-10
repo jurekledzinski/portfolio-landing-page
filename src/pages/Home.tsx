@@ -1,9 +1,12 @@
-import { Header } from "@/features"
+import { Header, HeroSection } from "@/features"
 
 export const HomePage = () => {
   return (
     <>
       <Header />
+      <menu>
+        <HeroSection />
+      </menu>
     </>
   )
 }
