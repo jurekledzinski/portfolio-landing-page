@@ -14,8 +14,8 @@ export const Header = () => {
     <header className="px-4 py-4">
       <div className="mx-auto flex max-w-300 items-center justify-between">
         <h1 className="text-2xl font-bold">
-          <span className="text-orange-500">Port</span>
-          <span className="">folio</span>
+          <span className="text-orange-500">&lt; Port</span>
+          <span className="">folio /&gt;</span>
         </h1>
 
         <NavigationMenu className="hidden sm:block">
