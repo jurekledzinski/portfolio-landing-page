@@ -1,3 +1,4 @@
+import { menuItems } from "./utils"
 import {
   DropDownMenu,
   DropdownMenuItem,
@@ -6,8 +7,6 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from "@/components"
-
-const menuItems = ["Skills", "Projects", "About", "Contact"]
 
 export const Header = () => {
   return (
