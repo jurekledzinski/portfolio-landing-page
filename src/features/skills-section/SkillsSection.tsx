@@ -3,7 +3,7 @@ import { skillsData } from "./utils"
 
 export const SkillsSection = () => {
   return (
-    <section className="px-4 py-10 lg:pt-30">
+    <section className="px-4 pt-20 pb-10 lg:pt-30">
       <div className="mx-auto max-w-300">
         <h2 className="text-2xl font-bold sm:text-4xl">Skills & Stack</h2>
         <p className="mt-2 text-sm text-secondary sm:text-base">
