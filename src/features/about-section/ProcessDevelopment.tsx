@@ -15,7 +15,7 @@ export const ProcessDevelopment = () => {
               <Icon icon={process.icon} className="text-4xl sm:text-6xl" />
             </div>
 
-            <div className="">Web Development</div>
+            <div className="">{process.title}</div>
           </div>
 
           {index < 2 && (

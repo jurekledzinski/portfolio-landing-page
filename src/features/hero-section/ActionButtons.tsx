@@ -26,14 +26,16 @@ export const ActionButtons = () => {
           <Icon icon={file} />
         </Button>
         <Button
-          className="cursor-pointer rounded-xs text-white hover:bg-primary/90"
+          className="cursor-pointer rounded-xs"
           size="icon"
+          variant="outline"
         >
           <Icon icon={linkedin} />
         </Button>
         <Button
-          className="cursor-pointer rounded-xs text-white hover:bg-primary/90"
+          className="cursor-pointer rounded-xs"
           size="icon"
+          variant="outline"
         >
           <Icon icon={github} />
         </Button>
