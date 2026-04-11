@@ -1,7 +1,5 @@
 import { ActionButtons, Circles, Introduction } from "@/features"
 
-// <section className="overflow-hidden lg:overflow-visible lg:px-4 lg:py-30">
-
 export const HeroSection = () => {
   return (
     <section className="overflow-hidden pt-17 lg:overflow-visible lg:px-4 lg:pt-47 lg:pb-30">
