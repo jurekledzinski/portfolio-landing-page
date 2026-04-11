@@ -1,6 +1,6 @@
 export const Introduction = () => {
   return (
-    <div className="absolute top-[40%] left-4 z-1 -translate-y-[40%] lg:static lg:translate-none">
+    <div className="absolute top-[40%] left-4 z-2 -translate-y-[40%] lg:static lg:translate-none">
       <h2 className="text-2xl leading-[1.1] font-bold text-white sm:text-5xl lg:text-inherit">
         Hi
       </h2>
