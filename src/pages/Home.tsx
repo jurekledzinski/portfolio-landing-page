@@ -19,6 +19,7 @@ export const HomePage = () => {
       <menu>
         <HeroSection
           ref={registerSection("hero")}
+          onClick={handleScrollToSection}
           visibleSections={visibleSections}
         />
         <SkillsSection
