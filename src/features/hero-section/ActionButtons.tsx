@@ -3,16 +3,23 @@ import github from "@iconify-icons/simple-icons/github"
 import linkedin from "@iconify-icons/simple-icons/linkedin"
 import { Button } from "@/components"
 import { Icon } from "@iconify/react"
+import type { ActionButtonsProps } from "./types"
 
-export const ActionButtons = () => {
+export const ActionButtons = ({ onClick }: ActionButtonsProps) => {
   return (
     <div className="mt-4 flex flex-col gap-6 px-4 lg:px-0">
       <div className="flex gap-1">
-        <Button className="cursor-pointer rounded-xs px-6 py-5 text-white hover:bg-primary/90 sm:px-8 sm:py-5">
+        <Button
+          className="cursor-pointer rounded-xs px-6 py-5 text-white hover:bg-primary/90 sm:px-8 sm:py-5"
+          data-id="projects"
+          onClick={onClick}
+        >
           View projects
         </Button>
         <Button
           className="cursor-pointer rounded-xs px-6 py-5 sm:px-8 sm:py-5"
+          data-id="contact"
+          onClick={onClick}
           variant="outline"
         >
           Get in touch
