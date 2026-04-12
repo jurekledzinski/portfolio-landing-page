@@ -1,1 +1,6 @@
-export * from "./theme-provider"
+export * from "./context"
+export * from "./hooks"
+export * from "./ThemeProvider"
+export * from "./types"
+export * from "./useTheme"
+export * from "./utils"
