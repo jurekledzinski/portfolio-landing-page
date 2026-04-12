@@ -22,11 +22,11 @@ export const ProjectCard = ({
 }: ProjectCardProps) => {
   return (
     <Card className="flex h-full flex-col rounded-xs p-0 [&>img:first-child]:rounded-none">
-      <div className="hover:bg-black/50">
+      <div className="group">
         <img
           src={image}
           alt={title}
-          className="block aspect-video object-cover"
+          className="block aspect-video object-cover group-hover:brightness-96"
         />
       </div>
 
