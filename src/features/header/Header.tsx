@@ -1,18 +1,23 @@
+import type { HeaderProps } from "./types"
 import { menuItems } from "./utils"
 import {
+  Button,
   DropDownMenu,
   DropdownMenuItem,
   NavigationMenu,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
 } from "@/components"
 
-export const Header = () => {
+export const Header = ({ onClick }: HeaderProps) => {
   return (
     <header className="fixed top-0 left-0 z-3 w-full bg-background px-4 py-4">
       <div className="mx-auto flex max-w-300 items-center justify-between">
-        <h1 className="text-2xl font-bold">
+        <h1
+          className="cursor-pointer text-2xl font-bold"
+          data-id="hero"
+          onClick={onClick}
+        >
           <span className="text-orange-500">&lt; Port</span>
           <span className="">folio /&gt;</span>
         </h1>
@@ -21,12 +26,14 @@ export const Header = () => {
           <NavigationMenuList>
             {menuItems.map((item) => (
               <NavigationMenuItem key={item} asChild>
-                <NavigationMenuLink
-                  className="hover:bg-transparent focus:rounded-xs focus:bg-transparent"
-                  href="#"
+                <Button
+                  className="cursor-pointer hover:rounded-xs hover:bg-transparent focus:rounded-xs focus:bg-transparent"
+                  data-id={item.toLowerCase()}
+                  onClick={onClick}
+                  variant="ghost"
                 >
                   {item}
-                </NavigationMenuLink>
+                </Button>
               </NavigationMenuItem>
             ))}
           </NavigationMenuList>
@@ -34,7 +41,12 @@ export const Header = () => {
 
         <DropDownMenu className="sm:hidden">
           {menuItems.map((item) => (
-            <DropdownMenuItem key={item} className="rounded-xs">
+            <DropdownMenuItem
+              key={item}
+              className="rounded-xs"
+              data-id={item.toLowerCase()}
+              onClick={onClick}
+            >
               {item}
             </DropdownMenuItem>
           ))}
