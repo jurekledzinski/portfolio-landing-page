@@ -1,4 +1,5 @@
 export * from "./AboutSection"
 export * from "./InfoAboutMe"
 export * from "./ProcessDevelopment"
+export * from "./types"
 export * from "./utils"
