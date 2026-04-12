@@ -1,8 +1,10 @@
 export type ProjectCardProps = {
+  className: string
   image: string
   title: string
   description: string
   tags: string[]
+  style?: React.CSSProperties
 }
 
 export type ProjectsSectionProps = {

@@ -15,13 +15,18 @@ import {
 import type { ProjectCardProps } from "./types"
 
 export const ProjectCard = ({
+  className,
   description,
   image,
+  style,
   tags,
   title,
 }: ProjectCardProps) => {
   return (
-    <Card className="flex h-full flex-col rounded-xs p-0 [&>img:first-child]:rounded-none">
+    <Card
+      className={`flex h-full -translate-y-2 flex-col rounded-xs p-0 opacity-0 [&>img:first-child]:rounded-none ${className}`}
+      style={style}
+    >
       <div className="group">
         <img
           src={image}
