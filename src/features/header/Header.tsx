@@ -1,5 +1,6 @@
-import type { HeaderProps } from "./types"
 import { menuItems } from "./utils"
+import { Moon, Sun } from "lucide-react"
+import type { HeaderProps } from "./types"
 import {
   Button,
   DropDownMenu,
@@ -7,12 +8,13 @@ import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuList,
+  ThemeSwitch,
 } from "@/components"
 
 export const Header = ({ onClick }: HeaderProps) => {
   return (
     <header className="fixed top-0 left-0 z-3 w-full bg-background px-4 py-4">
-      <div className="mx-auto flex max-w-300 items-center justify-between">
+      <div className="mx-auto flex max-w-300 items-center">
         <h1
           className="cursor-pointer text-2xl font-bold"
           data-id="hero"
@@ -22,7 +24,7 @@ export const Header = ({ onClick }: HeaderProps) => {
           <span className="">folio /&gt;</span>
         </h1>
 
-        <NavigationMenu className="hidden sm:block">
+        <NavigationMenu className="ml-auto hidden sm:block">
           <NavigationMenuList>
             {menuItems.map((item) => (
               <NavigationMenuItem key={item} asChild>
@@ -39,7 +41,7 @@ export const Header = ({ onClick }: HeaderProps) => {
           </NavigationMenuList>
         </NavigationMenu>
 
-        <DropDownMenu className="sm:hidden">
+        <DropDownMenu className="ml-auto sm:hidden">
           {menuItems.map((item) => (
             <DropdownMenuItem
               key={item}
@@ -51,6 +53,11 @@ export const Header = ({ onClick }: HeaderProps) => {
             </DropdownMenuItem>
           ))}
         </DropDownMenu>
+
+        <ThemeSwitch
+          thumbIconChecked={<Moon className="h-4 w-4" />}
+          thumbIconUnchecked={<Sun className="h-4 w-4" />}
+        />
       </div>
     </header>
   )
