@@ -4,3 +4,8 @@ export type ProjectCardProps = {
   description: string
   tags: string[]
 }
+
+export type ProjectsSectionProps = {
+  ref: React.Ref<HTMLElement>
+  visibleSections: Set<string>
+}
