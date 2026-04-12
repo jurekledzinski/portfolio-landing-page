@@ -22,25 +22,22 @@ export const ContactForm = ({ controls, onSubmit }: ContactFormProps) => {
           name="name"
           control={controls.control}
           rules={{ required: { message: "Name is required", value: true } }}
-          render={({ field, fieldState }) => {
-            console.log("fieldState", fieldState)
-            return (
-              <Field className="gap-1" data-invalid={fieldState.invalid}>
-                <FieldLabel htmlFor="name">Name</FieldLabel>
-                <Input
-                  {...field}
-                  className="rounded-xs"
-                  id="name"
-                  aria-invalid={fieldState.invalid}
-                  placeholder="Name"
-                  autoComplete="off"
-                />
-                {fieldState.invalid && (
-                  <FieldError className="text-xs" errors={[fieldState.error]} />
-                )}
-              </Field>
-            )
-          }}
+          render={({ field, fieldState }) => (
+            <Field className="gap-1" data-invalid={fieldState.invalid}>
+              <FieldLabel htmlFor="name">Name</FieldLabel>
+              <Input
+                {...field}
+                className="rounded-xs"
+                id="name"
+                aria-invalid={fieldState.invalid}
+                placeholder="Name"
+                autoComplete="off"
+              />
+              {fieldState.invalid && (
+                <FieldError className="text-xs" errors={[fieldState.error]} />
+              )}
+            </Field>
+          )}
         />
       </FieldGroup>
 
