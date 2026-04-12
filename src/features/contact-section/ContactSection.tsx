@@ -1,12 +1,13 @@
 import { ContactForm } from "./ContactForm"
 import { GetInTouch } from "./GetInTouch"
 import { useContact } from "./useContact"
+import type { ContactSectionProps } from "./types"
 
-export const ContactSection = () => {
+export const ContactSection = ({ ref }: ContactSectionProps) => {
   const form = useContact()
 
   return (
-    <section className="px-4 py-10">
+    <section className="px-4 py-10" id="contact" ref={ref}>
       <div className="mx-auto max-w-300">
         <h2 className="text-2xl font-bold sm:text-4xl">Contact</h2>
         <p className="mt-2 text-sm text-secondary sm:text-base">

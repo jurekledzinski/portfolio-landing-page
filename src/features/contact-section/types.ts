@@ -11,3 +11,8 @@ export type ContactFormProps = {
   isPending: boolean
   onSubmit: SubmitHandler<InputsForm>
 }
+
+export type ContactSectionProps = {
+  ref: React.Ref<HTMLElement>
+  visibleSections: Set<string>
+}
