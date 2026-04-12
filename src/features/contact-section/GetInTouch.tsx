@@ -19,15 +19,21 @@ export const GetInTouch = () => {
           className="cursor-pointer rounded-xs"
           size="icon"
           variant="outline"
+          asChild
         >
-          <Icon icon={linkedin} />
+          <a href={import.meta.env.VITE_LINKEDIN_URL} target="_blank">
+            <Icon icon={linkedin} />
+          </a>
         </Button>
         <Button
           className="cursor-pointer rounded-xs"
           size="icon"
           variant="outline"
+          asChild
         >
-          <Icon icon={github} />
+          <a href={import.meta.env.VITE_GITHUB_URL} target="_blank">
+            <Icon icon={github} />
+          </a>
         </Button>
       </div>
     </>
