@@ -1,9 +1,13 @@
+import clsx from "clsx"
 import { ContactForm } from "./ContactForm"
 import { GetInTouch } from "./GetInTouch"
 import { useContact } from "./useContact"
 import type { ContactSectionProps } from "./types"
 
-export const ContactSection = ({ ref }: ContactSectionProps) => {
+export const ContactSection = ({
+  ref,
+  visibleSections,
+}: ContactSectionProps) => {
   const form = useContact()
 
   return (
@@ -15,11 +19,23 @@ export const ContactSection = ({ ref }: ContactSectionProps) => {
         </p>
 
         <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-          <div className="w-full sm:w-[50%]">
+          <div
+            className={clsx({
+              "w-full -translate-y-2 opacity-0 sm:w-[50%]": true,
+              "translate-y-0 opacity-100 transition-[transform,opacity] duration-500 ease-in":
+                visibleSections.has("contact"),
+            })}
+          >
             <GetInTouch />
           </div>
 
-          <div className="mt-10 w-full sm:mt-auto sm:w-[50%]">
+          <div
+            className={clsx({
+              "mt-10 w-full -translate-y-2 opacity-0 sm:mt-auto sm:w-[50%]": true,
+              "translate-y-0 opacity-100 transition-[transform,opacity] delay-300 duration-500 ease-in":
+                visibleSections.has("contact"),
+            })}
+          >
             <ContactForm
               isPending={false}
               controls={form.formControl}
