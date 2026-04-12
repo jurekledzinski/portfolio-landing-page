@@ -9,14 +9,14 @@ export const ProcessDevelopment = ({ className }: ProcessDevelopmentProps) => {
     <div className={`flex -translate-y-2 flex-col opacity-0 ${className}`}>
       {processData.map((process, index) => (
         <Fragment key={process.title}>
-          <div className="grid grid-cols-[2rem_minmax(100px,120px)_200px] items-center gap-2">
+          <div className="grid grid-cols-[1rem_minmax(50px,50px)_1fr] items-center gap-2 sm:grid-cols-[2rem_minmax(100px,100px)_200px]">
             <Separator className="calc(h-full - 10px)" orientation="vertical" />
 
-            <div className="">
-              <Icon icon={process.icon} className="text-4xl sm:text-6xl" />
+            <div>
+              <Icon icon={process.icon} className="text-3xl sm:text-6xl" />
             </div>
 
-            <div className="">{process.title}</div>
+            <p className="text-base">{process.title}</p>
           </div>
 
           {index < 2 && (

@@ -12,7 +12,7 @@ export const AboutSection = ({ ref, visibleSections }: AboutSectionProps) => {
         </p>
 
         <div className="mt-10 flex flex-col md:flex-row">
-          <div className="sm:w-[50%]">
+          <div className="w-full md:w-[50%]">
             <ProcessDevelopment
               className={clsx({
                 "translate-y-0 opacity-100 transition-[transform,opacity] duration-500 ease-in":
@@ -20,7 +20,7 @@ export const AboutSection = ({ ref, visibleSections }: AboutSectionProps) => {
               })}
             />
           </div>
-          <div className="mt-10 flex flex-col gap-4 md:mt-auto md:w-[50%]">
+          <div className="mt-10 flex w-full flex-col gap-4 md:mt-auto md:w-[50%]">
             <InfoAboutMe
               className={clsx({
                 "translate-y-0 opacity-100 transition-[transform,opacity] delay-300 duration-500 ease-in":
