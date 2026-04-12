@@ -1,13 +1,37 @@
 import * as React from "react"
+import { cn } from "@/lib/utils"
 import { Switch as SwitchPrimitive } from "radix-ui"
 
-import { cn } from "@/lib/utils"
+function SwitchThumb({
+  childrenThumb,
+  className,
+}: {
+  childrenThumb?: React.ReactNode
+  className?: string
+}) {
+  return (
+    <SwitchPrimitive.Thumb
+      data-slot="switch-thumb"
+      className={cn(
+        "pointer-events-none relative block rounded-full bg-background ring-0 transition-transform group-data-[size=default]/switch:size-4 group-data-[size=sm]/switch:size-3 group-data-[size=default]/switch:data-checked:translate-x-[calc(100%-2px)] group-data-[size=sm]/switch:data-checked:translate-x-[calc(100%-2px)] dark:data-checked:bg-primary-foreground group-data-[size=default]/switch:data-unchecked:translate-x-0 group-data-[size=sm]/switch:data-unchecked:translate-x-0 dark:data-unchecked:bg-foreground",
+        className
+      )}
+    >
+      {childrenThumb}
+    </SwitchPrimitive.Thumb>
+  )
+}
 
 function Switch({
+  children,
+  childrenThumb,
   className,
+  classNameThumb,
   size = "default",
   ...props
 }: React.ComponentProps<typeof SwitchPrimitive.Root> & {
+  childrenThumb?: React.ReactNode
+  classNameThumb?: string
   size?: "sm" | "default"
 }) {
   return (
@@ -20,12 +44,10 @@ function Switch({
       )}
       {...props}
     >
-      <SwitchPrimitive.Thumb
-        data-slot="switch-thumb"
-        className="pointer-events-none block rounded-full bg-background ring-0 transition-transform group-data-[size=default]/switch:size-4 group-data-[size=sm]/switch:size-3 group-data-[size=default]/switch:data-checked:translate-x-[calc(100%-2px)] group-data-[size=sm]/switch:data-checked:translate-x-[calc(100%-2px)] dark:data-checked:bg-primary-foreground group-data-[size=default]/switch:data-unchecked:translate-x-0 group-data-[size=sm]/switch:data-unchecked:translate-x-0 dark:data-unchecked:bg-foreground"
-      />
+      <SwitchThumb childrenThumb={childrenThumb} className={classNameThumb} />
+      {children}
     </SwitchPrimitive.Root>
   )
 }
 
-export { Switch }
+export { Switch, SwitchThumb }
