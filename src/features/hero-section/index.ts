@@ -1,5 +1,6 @@
 export * from "./ActionButtons"
 export * from "./Circles"
+export * from "./HeroImage"
 export * from "./HeroSection"
 export * from "./HeroSection"
 export * from "./Introduction"

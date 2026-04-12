@@ -1,7 +1,7 @@
-import { ActionButtons, Circles, Introduction } from "@/features"
+import { ActionButtons, Circles, Introduction, HeroImage } from "@/features"
 import type { HeroSectionProps } from "./types"
 
-export const HeroSection = ({ ref }: HeroSectionProps) => {
+export const HeroSection = ({ ref, visibleSections }: HeroSectionProps) => {
   return (
     <section
       className="overflow-hidden pt-17 lg:overflow-visible lg:px-4 lg:pt-47 lg:pb-30"
@@ -13,16 +13,10 @@ export const HeroSection = ({ ref }: HeroSectionProps) => {
           <Introduction />
           <ActionButtons />
         </div>
+
         <div className="relative flex items-center lg:w-[60%]">
-          <Circles />
-          <div className="relative">
-            <img
-              className="h-full min-h-100 sm:h-auto sm:min-h-auto lg:rounded-tl-4xl lg:rounded-br-4xl"
-              src="./desktop.jpeg"
-              alt="Desktop"
-            />
-            <div className="absolute top-0 right-0 bottom-0 rounded-br-4xl bg-amber-600/45 lg:w-[50%]"></div>
-          </div>
+          <Circles visibleSections={visibleSections} />
+          <HeroImage />
         </div>
       </div>
     </section>
