@@ -1,6 +1,8 @@
-export const InfoAboutMe = () => {
+import type { InfoAboutMeProps } from "./types"
+
+export const InfoAboutMe = ({ className }: InfoAboutMeProps) => {
   return (
-    <>
+    <div className={`-translate-y-2 opacity-0 ${className}`}>
       <p className="text-xs sm:text-base">
         Passionate about crafting great web experiences I'm Jerzy, a frontend
         developer based in Netherlands with 2 years of experience building
@@ -19,6 +21,6 @@ export const InfoAboutMe = () => {
         Currently open to new opportunities, freelance projects, and
         collaborations on exciting products.
       </p>
-    </>
+    </div>
   )
 }

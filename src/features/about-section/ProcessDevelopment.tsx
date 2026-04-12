@@ -2,10 +2,11 @@ import { Fragment } from "react"
 import { Icon } from "@iconify/react"
 import { processData } from "./utils"
 import { Separator } from "@/components"
+import type { ProcessDevelopmentProps } from "./types"
 
-export const ProcessDevelopment = () => {
+export const ProcessDevelopment = ({ className }: ProcessDevelopmentProps) => {
   return (
-    <div className="flex flex-col">
+    <div className={`flex -translate-y-2 flex-col opacity-0 ${className}`}>
       {processData.map((process, index) => (
         <Fragment key={process.title}>
           <div className="grid grid-cols-[2rem_minmax(100px,120px)_200px] items-center gap-2">

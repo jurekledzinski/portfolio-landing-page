@@ -1,7 +1,8 @@
 import { InfoAboutMe, ProcessDevelopment } from "@/features"
 import type { AboutSectionProps } from "@/features"
+import clsx from "clsx"
 
-export const AboutSection = ({ ref }: AboutSectionProps) => {
+export const AboutSection = ({ ref, visibleSections }: AboutSectionProps) => {
   return (
     <section className="px-4 py-10" id="about" ref={ref}>
       <div className="mx-auto max-w-300">
@@ -12,10 +13,20 @@ export const AboutSection = ({ ref }: AboutSectionProps) => {
 
         <div className="mt-10 flex flex-col md:flex-row">
           <div className="sm:w-[50%]">
-            <ProcessDevelopment />
+            <ProcessDevelopment
+              className={clsx({
+                "translate-y-0 opacity-100 transition-[transform,opacity] duration-500 ease-in":
+                  visibleSections.has("about"),
+              })}
+            />
           </div>
           <div className="mt-10 flex flex-col gap-4 md:mt-auto md:w-[50%]">
-            <InfoAboutMe />
+            <InfoAboutMe
+              className={clsx({
+                "translate-y-0 opacity-100 transition-[transform,opacity] delay-300 duration-500 ease-in":
+                  visibleSections.has("about"),
+              })}
+            />
           </div>
         </div>
       </div>
