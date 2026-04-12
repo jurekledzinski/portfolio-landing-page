@@ -29,22 +29,34 @@ export const ActionButtons = ({ onClick }: ActionButtonsProps) => {
         <Button
           className="cursor-pointer rounded-xs bg-orange-600 text-white hover:bg-orange-600/90"
           size="icon"
+          asChild
         >
-          <Icon icon={file} />
+          <a
+            download={import.meta.env.VITE_FILE_NAME_DOWNLOAD}
+            href={import.meta.env.VITE_FILE_URL}
+          >
+            <Icon icon={file} />
+          </a>
         </Button>
         <Button
           className="cursor-pointer rounded-xs"
           size="icon"
           variant="outline"
+          asChild
         >
-          <Icon icon={linkedin} />
+          <a href={import.meta.env.VITE_GITHUB_URL} target="_blank">
+            <Icon icon={linkedin} />
+          </a>
         </Button>
         <Button
           className="cursor-pointer rounded-xs"
           size="icon"
           variant="outline"
+          asChild
         >
-          <Icon icon={github} />
+          <a href={import.meta.env.VITE_LINKEDIN_URL} target="_blank">
+            <Icon icon={github} />
+          </a>
         </Button>
       </div>
     </div>
