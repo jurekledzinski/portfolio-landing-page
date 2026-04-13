@@ -7,7 +7,7 @@ import {
   HeroSection,
   ProjectsSection,
   SkillsSection,
-} from "@/features"
+} from "@features"
 
 export const HomePage = () => {
   const { handleScrollToSection, registerSection, sectionsRefs } = useScrollTo()
