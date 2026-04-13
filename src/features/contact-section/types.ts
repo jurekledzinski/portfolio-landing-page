@@ -1,4 +1,4 @@
-import type { SubmitHandler, UseFormReturn } from "react-hook-form"
+import type { UseFormReturn } from "react-hook-form"
 
 export type InputsForm = {
   email: string
@@ -9,7 +9,7 @@ export type InputsForm = {
 export type ContactFormProps = {
   controls: UseFormReturn<InputsForm, unknown, InputsForm>
   isPending: boolean
-  onSubmit: SubmitHandler<InputsForm>
+  onSubmit: (e?: React.BaseSyntheticEvent) => Promise<void>
 }
 
 export type ContactSectionProps = {
