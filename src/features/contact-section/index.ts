@@ -1,5 +1,5 @@
 export * from "./ContactForm"
 export * from "./ContactSection"
 export * from "./GetInTouch"
+export * from "./hooks"
 export * from "./types"
-export * from "./useContact"
