@@ -24,8 +24,28 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@actions/*": ["./src/actions/*"],
+      "@actions": ["./src/actions/index.ts"],
+      "@components/*": ["./src/components/*"],
+      "@components": ["./src/components/index.ts"],
+      "@features/*": ["./src/features/*"],
+      "@features": ["./src/features/index.ts"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@hooks": ["./src/hooks/index.ts"],
+      "@lib/*": ["./src/lib/*"],
+      "@lib": ["./src/lib/index.ts"],
+      "@netlify-helpers/*": ["./netlify-helpers/*"],
+      "@netlify-helpers": ["./netlify-helpers/index.ts"],
+      "@store/*": ["./src/store/*"],
+      "@store": ["./src/store/index.ts"]
     }
   },
-  "include": ["src"]
+  "include": [
+    "src/**/*",
+    "vite-env.d.ts",
+    "src/types-dts/**/*",
+    "netlify/functions/**/*"
+  ],
+  "exclude": ["node_modules"]
 }
