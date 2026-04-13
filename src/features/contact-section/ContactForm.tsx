@@ -6,17 +6,18 @@ import {
   FieldGroup,
   FieldLabel,
   Input,
+  Spinner,
   Textarea,
-} from "@/components"
+} from "@components"
 import type { ContactFormProps } from "./types"
 
-export const ContactForm = ({ controls, onSubmit }: ContactFormProps) => {
+export const ContactForm = ({
+  controls,
+  isPending,
+  onSubmit,
+}: ContactFormProps) => {
   return (
-    <form
-      className="flex flex-col gap-2"
-      onSubmit={controls.handleSubmit(onSubmit)}
-      noValidate
-    >
+    <form className="flex flex-col gap-2" onSubmit={onSubmit} noValidate>
       <FieldGroup>
         <Controller
           name="name"
@@ -106,6 +107,7 @@ export const ContactForm = ({ controls, onSubmit }: ContactFormProps) => {
         className="mt-4 cursor-pointer rounded-xs py-5 text-white hover:bg-primary/90"
         type="submit"
       >
+        {isPending && <Spinner data-icon="inline-start" />}
         Send Message
       </Button>
     </form>
