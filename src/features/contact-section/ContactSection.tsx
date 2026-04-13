@@ -1,7 +1,7 @@
 import clsx from "clsx"
 import { ContactForm } from "./ContactForm"
 import { GetInTouch } from "./GetInTouch"
-import { useContact } from "./useContact"
+import { useContact } from "./hooks"
 import type { ContactSectionProps } from "./types"
 
 export const ContactSection = ({
@@ -37,7 +37,7 @@ export const ContactSection = ({
             })}
           >
             <ContactForm
-              isPending={false}
+              isPending={form.isPending}
               controls={form.formControl}
               onSubmit={form.onSubmit}
             />
