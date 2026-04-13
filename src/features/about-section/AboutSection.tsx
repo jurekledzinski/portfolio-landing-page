@@ -1,5 +1,5 @@
-import { InfoAboutMe, ProcessDevelopment } from "@/features"
-import type { AboutSectionProps } from "@/features"
+import { InfoAboutMe, ProcessDevelopment } from "@features"
+import type { AboutSectionProps } from "@features"
 import clsx from "clsx"
 
 export const AboutSection = ({ ref, visibleSections }: AboutSectionProps) => {

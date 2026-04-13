@@ -1,7 +1,7 @@
 import { Fragment } from "react"
 import { Icon } from "@iconify/react"
 import { processData } from "./utils"
-import { Separator } from "@/components"
+import { Separator } from "@components"
 import type { ProcessDevelopmentProps } from "./types"
 
 export const ProcessDevelopment = ({ className }: ProcessDevelopmentProps) => {

@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components"
+import { Card, CardContent, CardHeader, CardTitle } from "@components"
 import { Icon } from "@iconify/react"
 import type { SkillCardProps } from "./types"
 

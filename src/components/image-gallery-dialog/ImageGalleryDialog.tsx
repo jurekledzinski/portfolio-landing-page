@@ -1,4 +1,4 @@
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components"
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@components"
 import type { ImageGalleryDialogProps } from "./types"
 
 export const ImageGalleryDialog = ({

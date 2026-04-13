@@ -1,4 +1,4 @@
-import { ActionButtons, Circles, Introduction, HeroImage } from "@/features"
+import { ActionButtons, Circles, Introduction, HeroImage } from "@features"
 import type { HeroSectionProps } from "./types"
 
 export const HeroSection = ({

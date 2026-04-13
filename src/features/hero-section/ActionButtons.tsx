@@ -1,7 +1,7 @@
 import file from "@iconify-icons/fa-solid/file"
 import github from "@iconify-icons/simple-icons/github"
 import linkedin from "@iconify-icons/simple-icons/linkedin"
-import { Button } from "@/components"
+import { Button } from "@components"
 import { Icon } from "@iconify/react"
 import type { ActionButtonsProps } from "./types"
 

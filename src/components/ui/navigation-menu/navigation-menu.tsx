@@ -1,6 +1,6 @@
 import * as React from "react"
 import { ChevronDownIcon } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { cn } from "@lib"
 import { NavigationMenu as NavigationMenuPrimitive } from "radix-ui"
 import { navigationMenuTriggerStyle } from "./navigation-trigger-styles"
 

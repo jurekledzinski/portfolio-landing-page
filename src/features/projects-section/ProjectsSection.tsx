@@ -1,5 +1,5 @@
 import clsx from "clsx"
-import { CarouselItem, ImageGalleryDialog, Slider } from "@/components"
+import { CarouselItem, ImageGalleryDialog, Slider } from "@components"
 import { ProjectCard } from "./ProjectCard"
 import { projectsData } from "./utils"
 import { useImageGalleryDialog } from "./hooks"
