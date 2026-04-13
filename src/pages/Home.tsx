@@ -1,3 +1,4 @@
+import { useMemo } from "react"
 import { useObserveSections, useScrollTo } from "./hooks"
 import {
   AboutSection,
@@ -7,37 +8,31 @@ import {
   HeroSection,
   ProjectsSection,
   SkillsSection,
-} from "@features"
+} from "@/features"
 
 export const HomePage = () => {
-  const { handleScrollToSection, registerSection, sectionsRefs } = useScrollTo()
+  const { handleScrollToSection, regSection, sectionsRefs } = useScrollTo()
   const { visibleSections } = useObserveSections({ sectionsRefs })
+
+  const projectsRef = useMemo(() => regSection("projects"), [regSection])
+  const heroRef = useMemo(() => regSection("hero"), [regSection])
+  const skillsRef = useMemo(() => regSection("skills"), [regSection])
+  const aboutRef = useMemo(() => regSection("about"), [regSection])
+  const contactRef = useMemo(() => regSection("contact"), [regSection])
 
   return (
     <>
       <Header onClick={handleScrollToSection} />
       <menu>
         <HeroSection
-          ref={registerSection("hero")}
+          ref={heroRef}
           onClick={handleScrollToSection}
           visibleSections={visibleSections}
         />
-        <SkillsSection
-          ref={registerSection("skills")}
-          visibleSections={visibleSections}
-        />
-        <ProjectsSection
-          ref={registerSection("projects")}
-          visibleSections={visibleSections}
-        />
-        <AboutSection
-          ref={registerSection("about")}
-          visibleSections={visibleSections}
-        />
-        <ContactSection
-          ref={registerSection("contact")}
-          visibleSections={visibleSections}
-        />
+        <SkillsSection ref={skillsRef} visibleSections={visibleSections} />
+        <ProjectsSection ref={projectsRef} visibleSections={visibleSections} />
+        <AboutSection ref={aboutRef} visibleSections={visibleSections} />
+        <ContactSection ref={contactRef} visibleSections={visibleSections} />
         <Footer />
       </menu>
     </>
