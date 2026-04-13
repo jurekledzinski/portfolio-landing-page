@@ -1,23 +1,23 @@
 import clsx from "clsx"
+import { CarouselItem, ImageGalleryDialog, Slider } from "@/components"
 import { ProjectCard } from "./ProjectCard"
 import { projectsData } from "./utils"
-import type { ProjectsSectionProps } from "./types"
 import { useImageGalleryDialog } from "./hooks"
-import { CarouselItem, ImageGalleryDialog, Slider } from "@/components"
+import type { ProjectsSectionProps } from "./types"
 
 export const ProjectsSection = ({
   ref,
   visibleSections,
 }: ProjectsSectionProps) => {
-  const { handleCloseDialog, handleOpenDialog, open, projectImages } =
+  const { closeDialog, openDialog, open, projectImages, titleProject } =
     useImageGalleryDialog()
 
   return (
     <>
       <ImageGalleryDialog
-        title="Project"
+        title={titleProject.current}
         open={open}
-        onOpenChange={handleCloseDialog}
+        onOpenChange={closeDialog}
       >
         <Slider>
           {projectImages.current.map((image) => (
@@ -52,7 +52,7 @@ export const ProjectsSection = ({
                   "translate-y-0 opacity-100 transition-[transform,opacity] duration-500 ease-in":
                     visibleSections.has("projects"),
                 })}
-                onClick={handleOpenDialog}
+                onClick={openDialog}
                 style={{ transitionDelay: `${index * 300}ms` }}
                 {...project}
               />
