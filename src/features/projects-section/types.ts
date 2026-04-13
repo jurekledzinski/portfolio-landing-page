@@ -1,9 +1,12 @@
 export type ProjectCardProps = {
   className: string
-  image: string
-  title: string
   description: string
+  github: string
+  image: string
+  live: string
   tags: string[]
+  title: string
+  onClick?: React.MouseEventHandler<HTMLButtonElement>
   style?: React.CSSProperties
 }
 
