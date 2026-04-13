@@ -1,4 +1,4 @@
-import github from "@iconify-icons/simple-icons/github"
+import iconGithub from "@iconify-icons/simple-icons/github"
 import images from "@iconify-icons/fa-solid/images"
 import { Icon } from "@iconify/react"
 import {
@@ -17,7 +17,10 @@ import type { ProjectCardProps } from "./types"
 export const ProjectCard = ({
   className,
   description,
+  github,
   image,
+  live,
+  onClick,
   style,
   tags,
   title,
@@ -62,18 +65,28 @@ export const ProjectCard = ({
       </CardContent>
 
       <CardFooter className="mt-auto flex gap-1">
-        <Button className="cursor-pointer rounded-xs bg-orange-600 text-white hover:bg-orange-600/90">
-          Live demo
+        <Button
+          className="cursor-pointer rounded-xs bg-orange-600 text-white hover:bg-orange-600/90"
+          asChild
+        >
+          <a href={live} target="_blank">
+            Live demo
+          </a>
         </Button>
         <Button
           className="ml-auto cursor-pointer rounded-xs"
           size="icon"
           variant="outline"
+          asChild
         >
-          <Icon icon={github} />
+          <a href={github} target="_blank">
+            <Icon icon={iconGithub} />
+          </a>
         </Button>
         <Button
           className="cursor-pointer rounded-xs"
+          data-id={title.toLowerCase().replace(/\s/, "_")}
+          onClick={onClick}
           size="icon"
           variant="outline"
         >
