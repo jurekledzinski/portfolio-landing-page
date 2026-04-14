@@ -3,7 +3,7 @@ import handlebars from "handlebars"
 import juice from "juice"
 import nodemailer from "nodemailer"
 import path from "path"
-import { ContactEmailSchema } from "@actions"
+import { ContactEmailSchema } from "../../src/actions"
 import { tryCatch } from "../../netlify-helpers/tryCatch"
 import type { Handler, HandlerEvent } from "@netlify/functions"
 
