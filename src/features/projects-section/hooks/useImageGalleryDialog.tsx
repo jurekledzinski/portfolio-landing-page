@@ -1,10 +1,11 @@
 import { screenshotsProject } from "../utils"
 import { useRef, useState } from "react"
+import type { ProjectImage } from "./types"
 
 export const useImageGalleryDialog = () => {
   const [open, setOpen] = useState(false)
 
-  const projectImages = useRef<{ id: number; src: string }[]>([])
+  const projectImages = useRef<ProjectImage[]>([])
   const titleProject = useRef("")
 
   const openDialog = (e: React.MouseEvent<HTMLButtonElement>) => {
