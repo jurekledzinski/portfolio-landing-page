@@ -19,7 +19,7 @@ export const useObserveSections = ({
           visible.target.classList.add("visible")
         }
       },
-      { threshold: 0.3, rootMargin: "0px" }
+      { root: null, rootMargin: "-40% 0px -50% 0px", threshold: 0 }
     )
 
     sections.forEach((el) => el[1] && observer.observe(el[1]))
