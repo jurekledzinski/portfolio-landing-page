@@ -11,9 +11,9 @@ export const Introduction = () => {
         Frontend developer
       </h2>
       <p className="mt-2 text-sm text-white sm:text-base lg:text-inherit">
-        Experience with React.js, Javascript, TypeScript, CSS and SCSS, focused
-        on creating user-friendly interfaces and exploring Next.js, Express.js,
-        and MongoDB.
+        Experience with React.js, Javascript, TypeScript, CSS, SCSS, Tailwind
+        CSS, focused on creating user-friendly interfaces and exploring Next.js,
+        Express.js, and MongoDB.
       </p>
     </div>
   )
