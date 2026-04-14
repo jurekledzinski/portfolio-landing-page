@@ -10,5 +10,4 @@ export type SkillCardProps = {
 
 export type SkillsSectionProps = {
   ref: React.Ref<HTMLElement>
-  visibleSections: Set<string>
 }

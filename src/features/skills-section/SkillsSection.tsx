@@ -1,11 +1,15 @@
-import clsx from "clsx"
+import { memo } from "react"
 import { SkillCard } from "./SkillCard"
 import { skillsData } from "./utils"
 import type { SkillsSectionProps } from "./types"
 
-export const SkillsSection = ({ ref, visibleSections }: SkillsSectionProps) => {
+const SkillsComponent = ({ ref }: SkillsSectionProps) => {
   return (
-    <section className="px-4 pt-20 pb-10 lg:pt-30" id="skills" ref={ref}>
+    <section
+      className="group px-4 pt-20 pb-10 lg:pt-30"
+      data-id="skills"
+      ref={ref}
+    >
       <div className="mx-auto max-w-300">
         <h2 className="text-2xl font-bold sm:text-4xl">Skills & Stack</h2>
         <p className="mt-2 text-sm text-secondary sm:text-base">
@@ -16,10 +20,7 @@ export const SkillsSection = ({ ref, visibleSections }: SkillsSectionProps) => {
           {skillsData.map((skill, index) => (
             <SkillCard
               key={skill.title}
-              className={clsx({
-                "translate-y-0 opacity-100 transition-[transform,opacity] duration-500 ease-in":
-                  visibleSections.has("skills"),
-              })}
+              className="group-[.visible]:translate-y-0 group-[.visible]:opacity-100 group-[.visible]:transition-[transform,opacity] group-[.visible]:duration-500 group-[.visible]:ease-in"
               description={skill.description}
               icon={skill.icon}
               style={{ transitionDelay: `${index * 300}ms` }}
@@ -31,3 +32,5 @@ export const SkillsSection = ({ ref, visibleSections }: SkillsSectionProps) => {
     </section>
   )
 }
+
+export const SkillsSection = memo(SkillsComponent)
