@@ -8,7 +8,7 @@ export const ImageGalleryDialog = ({
 }: ImageGalleryDialogProps) => {
   return (
     <Dialog {...props}>
-      <DialogContent className="sm:max-w-auto h-[85vh] w-full rounded-xs md:max-w-300">
+      <DialogContent className="sm:max-w-auto h-[85vh] max-h-[85vh] w-full rounded-xs md:max-w-300">
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
         </DialogHeader>
