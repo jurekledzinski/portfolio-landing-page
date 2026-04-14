@@ -1,5 +1,6 @@
 export * from "./dropdown-menu"
 export * from "./image-gallery-dialog"
+export * from "./section-header"
 export * from "./slider"
 export * from "./theme-switch"
 export * from "./ui"
