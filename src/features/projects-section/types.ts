@@ -12,5 +12,4 @@ export type ProjectCardProps = {
 
 export type ProjectsSectionProps = {
   ref: React.Ref<HTMLElement>
-  visibleSections: Set<string>
 }

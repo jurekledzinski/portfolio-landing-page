@@ -1,14 +1,11 @@
-import clsx from "clsx"
 import { CarouselItem, ImageGalleryDialog, Slider } from "@components"
+import { memo } from "react"
 import { ProjectCard } from "./ProjectCard"
 import { projectsData } from "./utils"
 import { useImageGalleryDialog } from "./hooks"
 import type { ProjectsSectionProps } from "./types"
 
-export const ProjectsSection = ({
-  ref,
-  visibleSections,
-}: ProjectsSectionProps) => {
+const ProjectsComponent = ({ ref }: ProjectsSectionProps) => {
   const { closeDialog, openDialog, open, projectImages, titleProject } =
     useImageGalleryDialog()
 
@@ -37,7 +34,7 @@ export const ProjectsSection = ({
         </Slider>
       </ImageGalleryDialog>
 
-      <section className="px-4 py-10" id="projects" ref={ref}>
+      <section className="group px-4 py-10" data-id="projects" ref={ref}>
         <div className="mx-auto max-w-300">
           <h2 className="text-2xl font-bold sm:text-4xl">Projects</h2>
           <p className="mt-2 text-sm text-secondary sm:text-base">
@@ -47,11 +44,8 @@ export const ProjectsSection = ({
           <div className="mt-10 grid grid-cols-1 gap-2 text-sm sm:not-first:grid-cols-[repeat(auto-fit,minmax(200px,1fr))]">
             {projectsData.map((project, index) => (
               <ProjectCard
+                className="group-[.visible]:translate-y-0 group-[.visible]:opacity-100 group-[.visible]:transition-[transform,opacity] group-[.visible]:duration-500 group-[.visible]:ease-in"
                 key={project.title}
-                className={clsx({
-                  "translate-y-0 opacity-100 transition-[transform,opacity] duration-500 ease-in":
-                    visibleSections.has("projects"),
-                })}
                 onClick={openDialog}
                 style={{ transitionDelay: `${index * 300}ms` }}
                 {...project}
@@ -63,3 +57,5 @@ export const ProjectsSection = ({
     </>
   )
 }
+
+export const ProjectsSection = memo(ProjectsComponent)
