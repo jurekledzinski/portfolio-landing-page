@@ -14,5 +14,4 @@ export type ContactFormProps = {
 
 export type ContactSectionProps = {
   ref: React.Ref<HTMLElement>
-  visibleSections: Set<string>
 }

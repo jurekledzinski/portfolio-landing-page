@@ -1,17 +1,14 @@
-import clsx from "clsx"
 import { ContactForm } from "./ContactForm"
 import { GetInTouch } from "./GetInTouch"
+import { memo } from "react"
 import { useContact } from "./hooks"
 import type { ContactSectionProps } from "./types"
 
-export const ContactSection = ({
-  ref,
-  visibleSections,
-}: ContactSectionProps) => {
+const ContactComponent = ({ ref }: ContactSectionProps) => {
   const form = useContact()
 
   return (
-    <section className="px-4 py-10" id="contact" ref={ref}>
+    <section className="group px-4 py-10" data-id="contact" ref={ref}>
       <div className="mx-auto max-w-300">
         <h2 className="text-2xl font-bold sm:text-4xl">Contact</h2>
         <p className="mt-2 text-sm text-secondary sm:text-base">
@@ -19,23 +16,11 @@ export const ContactSection = ({
         </p>
 
         <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-          <div
-            className={clsx({
-              "w-full -translate-y-2 opacity-0 sm:w-[50%]": true,
-              "translate-y-0 opacity-100 transition-[transform,opacity] duration-500 ease-in":
-                visibleSections.has("contact"),
-            })}
-          >
+          <div className="w-full -translate-y-2 opacity-0 group-[.visible]:translate-y-0 group-[.visible]:opacity-100 group-[.visible]:transition-[transform,opacity] group-[.visible]:duration-500 group-[.visible]:ease-in sm:w-[50%]">
             <GetInTouch />
           </div>
 
-          <div
-            className={clsx({
-              "mt-10 w-full -translate-y-2 opacity-0 sm:mt-auto sm:w-[50%]": true,
-              "translate-y-0 opacity-100 transition-[transform,opacity] delay-300 duration-500 ease-in":
-                visibleSections.has("contact"),
-            })}
-          >
+          <div className="mt-10 w-full -translate-y-2 opacity-0 group-[.visible]:translate-y-0 group-[.visible]:opacity-100 group-[.visible]:transition-[transform,opacity] group-[.visible]:delay-300 group-[.visible]:duration-500 group-[.visible]:ease-in sm:mt-auto sm:w-[50%]">
             <ContactForm
               isPending={form.isPending}
               controls={form.formControl}
@@ -47,3 +32,5 @@ export const ContactSection = ({
     </section>
   )
 }
+
+export const ContactSection = memo(ContactComponent)
