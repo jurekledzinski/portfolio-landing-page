@@ -1,28 +1,23 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 import type { UseObserveSectionsProps } from "./types"
 
 export const useObserveSections = ({
   sectionsRefs,
 }: UseObserveSectionsProps) => {
-  const scrolledSections = useRef<Set<string>>(new Set())
-  const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set())
+  const [activeItem, setActiveItem] = useState("hero")
 
   useEffect(() => {
     const sections = Object.entries(sectionsRefs.current)
 
     const observer = new IntersectionObserver(
       (entries) => {
-        const next = new Set(scrolledSections.current)
+        const visible = entries.find((entry) => entry.isIntersecting)
 
-        entries.forEach((entry) => {
-          const id = entry.target.id
-
-          if (entry.isIntersecting && !next.has(id)) {
-            next.add(id)
-            setVisibleSections(next)
-          }
-          scrolledSections.current = next
-        })
+        if (visible) {
+          const id = (visible.target as HTMLElement).dataset.id!
+          setActiveItem(id)
+          visible.target.classList.add("visible")
+        }
       },
       { threshold: 0.3, rootMargin: "0px" }
     )
@@ -32,5 +27,5 @@ export const useObserveSections = ({
     return () => observer.disconnect()
   }, [sectionsRefs])
 
-  return { visibleSections }
+  return { activeItem }
 }
