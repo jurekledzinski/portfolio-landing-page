@@ -5,7 +5,7 @@ import type { HeroSectionProps } from "./types"
 const HeroComponent = ({ ref, onClick }: HeroSectionProps) => {
   return (
     <section
-      className="group overflow-hidden pt-17 lg:overflow-visible lg:px-4 lg:pt-47 lg:pb-30"
+      className="group overflow-hidden pt-17 lg:overflow-visible lg:px-4 lg:pt-55 lg:pb-30"
       data-id="hero"
       ref={ref}
     >
