@@ -20,12 +20,12 @@ const ContactComponent = ({ ref }: ContactSectionProps) => {
           title="Contact"
         />
 
-        <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-          <div className="w-full -translate-y-2 opacity-0 group-[.visible]/section:translate-y-0 group-[.visible]/section:opacity-100 group-[.visible]/section:transition-[transform,opacity] group-[.visible]/section:duration-500 group-[.visible]/section:ease-in sm:w-[50%]">
+        <div className="mt-10 flex flex-col gap-4 md:flex-row">
+          <div className="w-full -translate-y-2 opacity-0 group-[.visible]/section:translate-y-0 group-[.visible]/section:opacity-100 group-[.visible]/section:transition-[transform,opacity] group-[.visible]/section:duration-500 group-[.visible]/section:ease-in md:w-[50%]">
             <GetInTouch />
           </div>
 
-          <div className="mt-10 w-full -translate-y-2 opacity-0 group-[.visible]/section:translate-y-0 group-[.visible]/section:opacity-100 group-[.visible]/section:transition-[transform,opacity] group-[.visible]/section:delay-300 group-[.visible]/section:duration-500 group-[.visible]/section:ease-in sm:mt-auto sm:w-[50%]">
+          <div className="mt-10 w-full -translate-y-2 opacity-0 group-[.visible]/section:translate-y-0 group-[.visible]/section:opacity-100 group-[.visible]/section:transition-[transform,opacity] group-[.visible]/section:delay-300 group-[.visible]/section:duration-500 group-[.visible]/section:ease-in md:mt-auto md:w-[50%]">
             <ContactForm
               isPending={form.isPending}
               controls={form.formControl}
