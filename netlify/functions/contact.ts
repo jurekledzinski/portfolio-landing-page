@@ -4,7 +4,7 @@ import juice from "juice"
 import nodemailer from "nodemailer"
 import path from "path"
 import { ContactEmailSchema } from "@actions"
-import { tryCatch } from "@netlify-helpers"
+import { tryCatch } from "../../netlify-helpers/tryCatch"
 import type { Handler, HandlerEvent } from "@netlify/functions"
 
 const contactEmailTemplate = fs.readFileSync(
