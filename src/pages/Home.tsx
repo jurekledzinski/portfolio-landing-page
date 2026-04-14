@@ -24,14 +24,14 @@ export const HomePage = () => {
         <DesktopMenu activeItem={activeItem} onClick={handleScrollToSection} />
         <MobileMenu activeItem={activeItem} onClick={handleScrollToSection} />
       </Header>
-      <menu>
+      <main>
         <HeroSection ref={hero} onClick={handleScrollToSection} />
         <SkillsSection ref={skills} />
         <ProjectsSection ref={projects} />
         <AboutSection ref={about} />
         <ContactSection ref={contact} />
         <Footer />
-      </menu>
+      </main>
     </>
   )
 }
