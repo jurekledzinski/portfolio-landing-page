@@ -1,38 +1,35 @@
-import { useMemo } from "react"
 import { useObserveSections, useScrollTo } from "./hooks"
 import {
   AboutSection,
   ContactSection,
+  DesktopMenu,
   Footer,
   Header,
   HeroSection,
+  Logo,
+  MobileMenu,
   ProjectsSection,
   SkillsSection,
-} from "@/features"
+} from "@features"
 
 export const HomePage = () => {
-  const { handleScrollToSection, regSection, sectionsRefs } = useScrollTo()
-  const { visibleSections } = useObserveSections({ sectionsRefs })
-
-  const projectsRef = useMemo(() => regSection("projects"), [regSection])
-  const heroRef = useMemo(() => regSection("hero"), [regSection])
-  const skillsRef = useMemo(() => regSection("skills"), [regSection])
-  const aboutRef = useMemo(() => regSection("about"), [regSection])
-  const contactRef = useMemo(() => regSection("contact"), [regSection])
+  const { handleScrollToSection, refs, sectionsRefs } = useScrollTo()
+  const { activeItem } = useObserveSections({ sectionsRefs })
+  const { about, contact, hero, skills, projects } = refs
 
   return (
     <>
-      <Header onClick={handleScrollToSection} />
+      <Header>
+        <Logo activeItem={activeItem} onClick={handleScrollToSection} />
+        <DesktopMenu activeItem={activeItem} onClick={handleScrollToSection} />
+        <MobileMenu activeItem={activeItem} onClick={handleScrollToSection} />
+      </Header>
       <menu>
-        <HeroSection
-          ref={heroRef}
-          onClick={handleScrollToSection}
-          visibleSections={visibleSections}
-        />
-        <SkillsSection ref={skillsRef} visibleSections={visibleSections} />
-        <ProjectsSection ref={projectsRef} visibleSections={visibleSections} />
-        <AboutSection ref={aboutRef} visibleSections={visibleSections} />
-        <ContactSection ref={contactRef} visibleSections={visibleSections} />
+        <HeroSection ref={hero} onClick={handleScrollToSection} />
+        <SkillsSection ref={skills} />
+        <ProjectsSection ref={projects} />
+        <AboutSection ref={about} />
+        <ContactSection ref={contact} />
         <Footer />
       </menu>
     </>

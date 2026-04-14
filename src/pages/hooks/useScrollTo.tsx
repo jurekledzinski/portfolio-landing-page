@@ -1,4 +1,6 @@
-import { useCallback, useRef } from "react"
+import { useCallback, useMemo, useRef } from "react"
+
+const sectionIds = ["hero", "projects", "skills", "about", "contact"]
 
 export const useScrollTo = () => {
   const sectionsRefs = useRef<Record<string, HTMLElement | null>>({})
@@ -45,5 +47,9 @@ export const useScrollTo = () => {
     []
   )
 
-  return { handleScrollToSection, regSection, sectionsRefs }
+  const refs = useMemo(() => {
+    return Object.fromEntries(sectionIds.map((id) => [id, regSection(id)]))
+  }, [regSection])
+
+  return { handleScrollToSection, refs, sectionsRefs }
 }
