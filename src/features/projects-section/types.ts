@@ -1,3 +1,5 @@
+import type { ProjectImage } from "./hooks"
+
 export type ProjectCardProps = {
   className: string
   description: string
@@ -12,4 +14,11 @@ export type ProjectCardProps = {
 
 export type ProjectsSectionProps = {
   ref: React.Ref<HTMLElement>
+}
+
+export type ProjectsGalleryDialogProps = {
+  closeDialog: () => void
+  images: React.RefObject<ProjectImage[]>
+  open: boolean
+  titleProject: React.RefObject<string>
 }
