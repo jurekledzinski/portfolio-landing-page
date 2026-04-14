@@ -1,8 +1,13 @@
-import { CarouselItem, ImageGalleryDialog, Slider } from "@components"
 import { memo } from "react"
 import { ProjectCard } from "./ProjectCard"
 import { projectsData } from "./utils"
 import { useImageGalleryDialog } from "./hooks"
+import {
+  CarouselItem,
+  ImageGalleryDialog,
+  SectionHeader,
+  Slider,
+} from "@components"
 import type { ProjectsSectionProps } from "./types"
 
 const ProjectsComponent = ({ ref }: ProjectsSectionProps) => {
@@ -34,17 +39,21 @@ const ProjectsComponent = ({ ref }: ProjectsSectionProps) => {
         </Slider>
       </ImageGalleryDialog>
 
-      <section className="group/parent px-4 py-10" data-id="projects" ref={ref}>
+      <section
+        className="group/section px-4 py-10 lg:py-20"
+        data-id="projects"
+        ref={ref}
+      >
         <div className="mx-auto max-w-300">
-          <h2 className="text-2xl font-bold sm:text-4xl">Projects</h2>
-          <p className="mt-2 text-sm text-secondary sm:text-base">
-            Some of the applications I've built and worked on
-          </p>
+          <SectionHeader
+            subtitle="Some of the applications I've built and worked on"
+            title="Projects"
+          />
 
           <div className="mt-10 grid grid-cols-1 gap-2 text-sm sm:not-first:grid-cols-[repeat(auto-fit,minmax(200px,1fr))]">
             {projectsData.map((project, index) => (
               <ProjectCard
-                className="group-[.visible]/parent:translate-y-0 group-[.visible]/parent:opacity-100 group-[.visible]/parent:transition-[transform,opacity] group-[.visible]/parent:duration-500 group-[.visible]/parent:ease-in"
+                className="group-[.visible]/section:translate-y-0 group-[.visible]/section:opacity-100 group-[.visible]/section:transition-[transform,opacity] group-[.visible]/section:duration-500 group-[.visible]/section:ease-in"
                 key={project.title}
                 onClick={openDialog}
                 style={{ transitionDelay: `${index * 300}ms` }}
