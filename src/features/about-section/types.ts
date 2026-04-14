@@ -1,6 +1,5 @@
 export type AboutSectionProps = {
   ref: React.Ref<HTMLElement>
-  visibleSections: Set<string>
 }
 
 export type ProcessDevelopmentProps = {

@@ -1,10 +1,10 @@
 import { InfoAboutMe, ProcessDevelopment } from "@features"
+import { memo } from "react"
 import type { AboutSectionProps } from "@features"
-import clsx from "clsx"
 
-export const AboutSection = ({ ref, visibleSections }: AboutSectionProps) => {
+const AboutComponent = ({ ref }: AboutSectionProps) => {
   return (
-    <section className="px-4 py-10" id="about" ref={ref}>
+    <section className="group px-4 py-10" data-id="about" ref={ref}>
       <div className="mx-auto max-w-300">
         <h2 className="text-2xl font-bold sm:text-4xl">About Me</h2>
         <p className="mt-2 text-sm text-secondary sm:text-base">
@@ -13,23 +13,15 @@ export const AboutSection = ({ ref, visibleSections }: AboutSectionProps) => {
 
         <div className="mt-10 flex flex-col md:flex-row">
           <div className="w-full md:w-[50%]">
-            <ProcessDevelopment
-              className={clsx({
-                "translate-y-0 opacity-100 transition-[transform,opacity] duration-500 ease-in":
-                  visibleSections.has("about"),
-              })}
-            />
+            <ProcessDevelopment className="group-[.visible]:translate-y-0 group-[.visible]:opacity-100 group-[.visible]:transition-[transform,opacity] group-[.visible]:duration-500 group-[.visible]:ease-in" />
           </div>
           <div className="mt-10 flex w-full flex-col gap-4 md:mt-auto md:w-[50%]">
-            <InfoAboutMe
-              className={clsx({
-                "translate-y-0 opacity-100 transition-[transform,opacity] delay-300 duration-500 ease-in":
-                  visibleSections.has("about"),
-              })}
-            />
+            <InfoAboutMe className="group-[.visible]:translate-y-0 group-[.visible]:opacity-100 group-[.visible]:transition-[transform,opacity] group-[.visible]:delay-300 group-[.visible]:duration-500 group-[.visible]:ease-in" />
           </div>
         </div>
       </div>
     </section>
   )
 }
+
+export const AboutSection = memo(AboutComponent)
