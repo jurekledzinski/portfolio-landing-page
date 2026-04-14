@@ -1,3 +1,6 @@
+export * from "./DesktopMenu"
 export * from "./Header"
+export * from "./Logo"
+export * from "./MobileMenu"
 export * from "./types"
 export * from "./utils"
