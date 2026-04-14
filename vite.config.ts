@@ -6,6 +6,10 @@ import { defineConfig } from "vite"
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  server: {
+    open: true,
+    port: 3000,
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
@@ -16,6 +20,18 @@ export default defineConfig({
       "@lib": path.resolve(__dirname, "src/lib"),
       "@netlify-helpers": path.resolve(__dirname, "./netlify-helpers"),
       "@store": path.resolve(__dirname, "src/store"),
+    },
+  },
+  build: {
+    outDir: "build",
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes("node_modules")) {
+            return "vendor"
+          }
+        },
+      },
     },
   },
 })
