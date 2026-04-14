@@ -35,8 +35,6 @@
       "@hooks": ["./src/hooks/index.ts"],
       "@lib/*": ["./src/lib/*"],
       "@lib": ["./src/lib/index.ts"],
-      "@netlify-helpers/*": ["./netlify-helpers/*"],
-      "@netlify-helpers": ["./netlify-helpers/index.ts"],
       "@store/*": ["./src/store/*"],
       "@store": ["./src/store/index.ts"]
     }

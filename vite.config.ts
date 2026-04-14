@@ -18,7 +18,6 @@ export default defineConfig({
       "@features": path.resolve(__dirname, "src/features"),
       "@hooks": path.resolve(__dirname, "src/hooks"),
       "@lib": path.resolve(__dirname, "src/lib"),
-      "@netlify-helpers": path.resolve(__dirname, "./netlify-helpers"),
       "@store": path.resolve(__dirname, "src/store"),
     },
   },
