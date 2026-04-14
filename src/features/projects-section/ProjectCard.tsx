@@ -11,7 +11,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components"
+} from "@components"
 import type { ProjectCardProps } from "./types"
 
 export const ProjectCard = ({
@@ -30,11 +30,11 @@ export const ProjectCard = ({
       className={`flex h-full -translate-y-2 flex-col rounded-xs p-0 opacity-0 [&>img:first-child]:rounded-none ${className}`}
       style={style}
     >
-      <div className="group">
+      <div className="group/image relative">
         <img
           src={image}
           alt={title}
-          className="block aspect-video object-cover group-hover:brightness-96"
+          className="block aspect-video transition duration-300 group-hover/image:brightness-95"
         />
       </div>
 

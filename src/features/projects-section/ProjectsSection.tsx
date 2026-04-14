@@ -34,7 +34,7 @@ const ProjectsComponent = ({ ref }: ProjectsSectionProps) => {
         </Slider>
       </ImageGalleryDialog>
 
-      <section className="group px-4 py-10" data-id="projects" ref={ref}>
+      <section className="group/parent px-4 py-10" data-id="projects" ref={ref}>
         <div className="mx-auto max-w-300">
           <h2 className="text-2xl font-bold sm:text-4xl">Projects</h2>
           <p className="mt-2 text-sm text-secondary sm:text-base">
@@ -44,7 +44,7 @@ const ProjectsComponent = ({ ref }: ProjectsSectionProps) => {
           <div className="mt-10 grid grid-cols-1 gap-2 text-sm sm:not-first:grid-cols-[repeat(auto-fit,minmax(200px,1fr))]">
             {projectsData.map((project, index) => (
               <ProjectCard
-                className="group-[.visible]:translate-y-0 group-[.visible]:opacity-100 group-[.visible]:transition-[transform,opacity] group-[.visible]:duration-500 group-[.visible]:ease-in"
+                className="group-[.visible]/parent:translate-y-0 group-[.visible]/parent:opacity-100 group-[.visible]/parent:transition-[transform,opacity] group-[.visible]/parent:duration-500 group-[.visible]/parent:ease-in"
                 key={project.title}
                 onClick={openDialog}
                 style={{ transitionDelay: `${index * 300}ms` }}
