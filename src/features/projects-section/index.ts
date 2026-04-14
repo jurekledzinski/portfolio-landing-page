@@ -1,5 +1,6 @@
 export * from "./hooks"
 export * from "./ProjectCard"
+export * from "./ProjectsGalleryDialog"
 export * from "./ProjectsSection"
 export * from "./types"
 export * from "./utils"
