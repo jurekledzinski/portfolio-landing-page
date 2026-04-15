@@ -18,10 +18,10 @@ const AboutComponent = ({ ref }: AboutSectionProps) => {
 
         <div className="mt-10 flex flex-col md:flex-row">
           <div className="w-full md:w-[50%]">
-            <ProcessDevelopment className="group-[.visible]/section:translate-y-0 group-[.visible]/section:opacity-100 group-[.visible]/section:transition-[transform,opacity] group-[.visible]/section:duration-500 group-[.visible]/section:ease-in" />
+            <ProcessDevelopment className="group-[.visible]/section:translate-y-0 group-[.visible]/section:opacity-100 group-[.visible]/section:transition-[transform,opacity] group-[.visible]/section:duration-400 group-[.visible]/section:ease-in" />
           </div>
           <div className="mt-10 flex w-full flex-col gap-4 md:mt-auto md:w-[50%]">
-            <InfoAboutMe className="group-[.visible]/section:translate-y-0 group-[.visible]/section:opacity-100 group-[.visible]/section:transition-[transform,opacity] group-[.visible]/section:delay-300 group-[.visible]/section:duration-500 group-[.visible]/section:ease-in" />
+            <InfoAboutMe className="group-[.visible]/section:translate-y-0 group-[.visible]/section:opacity-100 group-[.visible]/section:transition-[transform,opacity] group-[.visible]/section:delay-200 group-[.visible]/section:duration-400 group-[.visible]/section:ease-in" />
           </div>
         </div>
       </div>

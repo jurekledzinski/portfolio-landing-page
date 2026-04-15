@@ -32,10 +32,10 @@ const ProjectsComponent = ({ ref }: ProjectsSectionProps) => {
           <div className="mt-10 grid grid-cols-1 gap-2 text-sm md:grid-cols-2 lg:not-first:grid-cols-[repeat(auto-fit,minmax(200px,1fr))]">
             {projectsData.map((project, index) => (
               <ProjectCard
-                className="group-[.visible]/section:translate-y-0 group-[.visible]/section:opacity-100 group-[.visible]/section:transition-[transform,opacity] group-[.visible]/section:duration-500 group-[.visible]/section:ease-in"
+                className="group-[.visible]/section:translate-y-0 group-[.visible]/section:opacity-100 group-[.visible]/section:transition-[transform,opacity] group-[.visible]/section:duration-400 group-[.visible]/section:ease-in"
                 key={project.title}
                 onClick={openDialog}
-                style={{ transitionDelay: `${index * 300}ms` }}
+                style={{ transitionDelay: `${index * 200}ms` }}
                 {...project}
               />
             ))}

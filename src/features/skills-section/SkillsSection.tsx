@@ -21,10 +21,10 @@ const SkillsComponent = ({ ref }: SkillsSectionProps) => {
           {skillsData.map((skill, index) => (
             <SkillCard
               key={skill.title}
-              className="group-[.visible]/section:translate-y-0 group-[.visible]/section:opacity-100 group-[.visible]/section:transition-[transform,opacity] group-[.visible]/section:duration-500 group-[.visible]/section:ease-in"
+              className="group-[.visible]/section:translate-y-0 group-[.visible]/section:opacity-100 group-[.visible]/section:transition-[transform,opacity] group-[.visible]/section:duration-400 group-[.visible]/section:ease-in"
               description={skill.description}
               icon={skill.icon}
-              style={{ transitionDelay: `${index * 300}ms` }}
+              style={{ transitionDelay: `${index * 200}ms` }}
               title={skill.title}
             />
           ))}
