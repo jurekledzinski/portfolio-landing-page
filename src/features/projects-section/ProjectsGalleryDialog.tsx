@@ -29,7 +29,6 @@ export const ProjectsGalleryDialog = ({
             <div className="h-full">
               <ImageContainer className="flex h-full w-full flex-col">
                 {({ isLoading, onLoad, onError }) => {
-                  console.log("isLoading", isLoading)
                   return (
                     <>
                       {isLoading && (
