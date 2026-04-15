@@ -66,7 +66,7 @@ export const ProjectCard = ({
 
       <CardFooter className="mt-auto flex gap-1">
         <Button
-          className="cursor-pointer rounded-xs bg-orange-600 text-white hover:bg-orange-600/90"
+          className="cursor-pointer rounded-xs bg-orange-400 text-white hover:bg-orange-500/90!"
           asChild
         >
           <a href={live} target="_blank">
