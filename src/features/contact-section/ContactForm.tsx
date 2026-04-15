@@ -28,7 +28,7 @@ export const ContactForm = ({
               <FieldLabel htmlFor="name">Name</FieldLabel>
               <Input
                 {...field}
-                className="rounded-xs"
+                className="rounded-xs text-sm placeholder:text-sm sm:text-base! sm:placeholder:text-base"
                 id="name"
                 aria-invalid={fieldState.invalid}
                 placeholder="Name"
@@ -59,7 +59,7 @@ export const ContactForm = ({
               <FieldLabel htmlFor="email">Email</FieldLabel>
               <Input
                 {...field}
-                className="rounded-xs"
+                className="rounded-xs text-sm placeholder:text-sm sm:text-base! sm:placeholder:text-base"
                 id="email"
                 aria-invalid={fieldState.invalid}
                 placeholder="Email"
@@ -89,7 +89,7 @@ export const ContactForm = ({
               <FieldLabel htmlFor="message">Message</FieldLabel>
               <Textarea
                 {...field}
-                className="h-40 resize-none rounded-xs"
+                className="h-40 resize-none rounded-xs text-sm placeholder:text-sm sm:text-base! sm:placeholder:text-base"
                 id="message"
                 aria-invalid={fieldState.invalid}
                 placeholder="Message"
