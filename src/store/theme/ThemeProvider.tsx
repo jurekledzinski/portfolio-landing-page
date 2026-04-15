@@ -4,6 +4,7 @@ import { useCallback, useMemo } from "react"
 import { useControlTheme } from "./hooks/useControlTheme"
 import { useKeyboardTheme } from "./hooks/useKeyboardTheme"
 import { useStorageChange } from "./hooks/useStorageChange"
+import { useSystemTheme } from "./hooks/useSystemTheme"
 import type { ThemeProviderProps } from "./types"
 
 export const ThemeProvider = ({
@@ -17,7 +18,9 @@ export const ThemeProvider = ({
     defaultTheme,
     storageKey,
   })
-  useApplyTheme({ theme, disableTransitionOnChange })
+
+  const systemTheme = useSystemTheme()
+  useApplyTheme({ systemTheme, theme, disableTransitionOnChange })
   useKeyboardTheme({ setThemeState, storageKey })
   useStorageChange({
     onSetTheme: useCallback((theme) => setThemeState(theme), [setThemeState]),
@@ -26,11 +29,8 @@ export const ThemeProvider = ({
   })
 
   const value = useMemo(
-    () => ({
-      theme,
-      setTheme,
-    }),
-    [theme, setTheme]
+    () => ({ theme: theme === "system" ? systemTheme : theme, setTheme }),
+    [theme, setTheme, systemTheme]
   )
 
   return (

@@ -4,18 +4,12 @@ export const COLOR_SCHEME_QUERY = "(prefers-color-scheme: dark)"
 export const THEME_VALUES: Theme[] = ["dark", "light", "system"]
 
 export const isTheme = (value: string | null): value is Theme => {
-  if (value === null) {
-    return false
-  }
-
+  if (value === null) return false
   return THEME_VALUES.includes(value as Theme)
 }
 
 export const getSystemTheme = (): ResolvedTheme => {
-  if (window.matchMedia(COLOR_SCHEME_QUERY).matches) {
-    return "dark"
-  }
-
+  if (window.matchMedia(COLOR_SCHEME_QUERY).matches) return "dark"
   return "light"
 }
 
@@ -39,20 +33,14 @@ export const disableTransitionsTemporarily = () => {
 }
 
 export const isEditableTarget = (target: EventTarget | null) => {
-  if (!(target instanceof HTMLElement)) {
-    return false
-  }
+  if (!(target instanceof HTMLElement)) return false
 
-  if (target.isContentEditable) {
-    return true
-  }
+  if (target.isContentEditable) return true
 
   const editableParent = target.closest(
     "input, textarea, select, [contenteditable='true']"
   )
-  if (editableParent) {
-    return true
-  }
+  if (editableParent) return true
 
   return false
 }

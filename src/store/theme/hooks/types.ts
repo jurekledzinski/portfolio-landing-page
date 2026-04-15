@@ -1,4 +1,4 @@
-import type { Theme } from "../types"
+import type { ResolvedTheme, Theme } from "../types"
 
 export type UseControlThemeProps = {
   defaultTheme?: Theme
@@ -6,6 +6,7 @@ export type UseControlThemeProps = {
 }
 
 export type useApplyThemeProps = {
+  systemTheme: ResolvedTheme
   theme: Theme
   disableTransitionOnChange?: boolean
 }

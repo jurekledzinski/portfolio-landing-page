@@ -37,8 +37,6 @@ export const useKeyboardTheme = ({
 
     window.addEventListener("keydown", handleKeyDown)
 
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown)
-    }
+    return () => window.removeEventListener("keydown", handleKeyDown)
   }, [handleSetTheme, storageKey])
 }

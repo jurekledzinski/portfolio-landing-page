@@ -1,45 +1,32 @@
+import { disableTransitionsTemporarily } from "../utils"
 import { useCallback, useEffect } from "react"
-import type { Theme } from "../types"
+import type { ResolvedTheme, Theme } from "../types"
 import type { useApplyThemeProps } from "./types"
-import {
-  COLOR_SCHEME_QUERY,
-  disableTransitionsTemporarily,
-  getSystemTheme,
-} from "../utils"
 
 export const useApplyTheme = ({
   disableTransitionOnChange,
+  systemTheme,
   theme,
 }: useApplyThemeProps) => {
+  const applyClassNameThemeHtml = (theme: ResolvedTheme) => {
+    const root = document.documentElement
+    root.classList.remove("light", "dark")
+    root.classList.add(theme)
+  }
+
   const applyTheme = useCallback(
     (nextTheme: Theme) => {
-      const root = document.documentElement
-      const resolvedTheme =
-        nextTheme === "system" ? getSystemTheme() : nextTheme
+      const newTheme = nextTheme === "system" ? systemTheme : nextTheme
       const restoreTransitions = disableTransitionOnChange
         ? disableTransitionsTemporarily()
         : null
 
-      root.classList.remove("light", "dark")
-      root.classList.add(resolvedTheme)
+      applyClassNameThemeHtml(newTheme)
 
       if (restoreTransitions) restoreTransitions()
     },
-    [disableTransitionOnChange]
+    [disableTransitionOnChange, systemTheme]
   )
 
-  useEffect(() => {
-    applyTheme(theme)
-
-    if (theme !== "system") return undefined
-
-    const mediaQuery = window.matchMedia(COLOR_SCHEME_QUERY)
-
-    const handleChange = () => applyTheme("system")
-    mediaQuery.addEventListener("change", handleChange)
-
-    return () => {
-      mediaQuery.removeEventListener("change", handleChange)
-    }
-  }, [theme, applyTheme])
+  useEffect(() => applyTheme(theme), [theme, applyTheme])
 }
