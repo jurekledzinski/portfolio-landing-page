@@ -8,7 +8,7 @@ import type { SliderProps } from "./types"
 
 export const Slider = ({ children }: SliderProps) => {
   return (
-    <Carousel className="h-full w-full">
+    <Carousel className="flex h-full w-full items-center">
       <CarouselContent className="flex h-full items-center">
         {children}
       </CarouselContent>

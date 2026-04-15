@@ -8,11 +8,11 @@ export const ImageGalleryDialog = ({
 }: ImageGalleryDialogProps) => {
   return (
     <Dialog {...props}>
-      <DialogContent className="sm:max-w-auto h-[85dvh] max-h-[85dvh] w-full rounded-xs md:max-w-300">
+      <DialogContent className="sm:max-w-auto flex h-[85dvh] max-h-[85dvh] w-full flex-col justify-center rounded-xs md:max-w-300">
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
         </DialogHeader>
-        <div className="min-h-0 overflow-hidden">{children}</div>
+        <div className="min-h-0 flex-1 overflow-hidden">{children}</div>
       </DialogContent>
     </Dialog>
   )

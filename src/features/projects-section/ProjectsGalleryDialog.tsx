@@ -27,12 +27,12 @@ export const ProjectsGalleryDialog = ({
             key={image.id}
           >
             <div className="h-full">
-              <ImageContainer className="flex h-full w-full flex-col">
+              <ImageContainer className="relative flex h-full w-full flex-col">
                 {({ isLoading, onLoad, onError }) => {
                   return (
                     <>
                       {isLoading && (
-                        <Skeleton className="aspect-video w-full" />
+                        <Skeleton className="absolute top-0 right-0 bottom-0 left-0 rounded-none" />
                       )}
 
                       <Image
