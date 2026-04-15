@@ -27,7 +27,7 @@ export const ActionButtons = ({ onClick }: ActionButtonsProps) => {
       </div>
       <div className="flex gap-1">
         <Button
-          className="cursor-pointer rounded-xs bg-orange-600 text-white hover:bg-orange-600/90"
+          className="cursor-pointer rounded-xs bg-orange-400 text-white hover:bg-orange-500/90!"
           size="icon"
           asChild
         >
