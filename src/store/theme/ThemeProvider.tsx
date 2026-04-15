@@ -1,10 +1,12 @@
 import { ThemeProviderContext } from "./context"
-import { useApplyTheme } from "./hooks/useApplyTheme"
 import { useCallback, useMemo } from "react"
-import { useControlTheme } from "./hooks/useControlTheme"
-import { useKeyboardTheme } from "./hooks/useKeyboardTheme"
-import { useStorageChange } from "./hooks/useStorageChange"
-import { useSystemTheme } from "./hooks/useSystemTheme"
+import {
+  useApplyTheme,
+  useControlTheme,
+  useKeyboardTheme,
+  useSystemTheme,
+  useStorageChange,
+} from "./hooks"
 import type { ThemeProviderProps } from "./types"
 
 export const ThemeProvider = ({
