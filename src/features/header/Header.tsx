@@ -4,7 +4,7 @@ import type { HeaderProps } from "./types"
 
 export const Header = ({ children }: HeaderProps) => {
   return (
-    <header className="fixed top-0 left-0 z-3 w-full bg-background px-4 py-4">
+    <header className="fixed top-0 left-0 z-10 w-full bg-background px-4 py-4 opacity-90 backdrop-blur-[20]">
       <div className="mx-auto flex max-w-300 items-center">
         {children}
         <ThemeSwitch
