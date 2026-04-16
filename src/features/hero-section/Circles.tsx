@@ -6,7 +6,7 @@ export const Circles = () => {
 
         <div className="absolute inset-10 rounded-full border-25 border-[#FF851B]/40 opacity-0 group-[.visible]:translate-y-0 group-[.visible]:opacity-100 group-[.visible]:transition-opacity group-[.visible]:delay-400 group-[.visible]:duration-400 group-[.visible]:ease-in" />
 
-        <div className="absolute inset-18 rounded-full border-26 border-[#FF851B]/40 opacity-0 group-[.visible]:translate-y-0 group-[.visible]:opacity-100 group-[.visible]:transition-opacity group-[.visible]:delay-0 group-[.visible]:duration-400 group-[.visible]:ease-in" />
+        <div className="absolute inset-18 rounded-full border-25 border-[#FF851B]/40 opacity-0 group-[.visible]:translate-y-0 group-[.visible]:opacity-100 group-[.visible]:transition-opacity group-[.visible]:delay-0 group-[.visible]:duration-400 group-[.visible]:ease-in" />
       </div>
     </div>
   )
