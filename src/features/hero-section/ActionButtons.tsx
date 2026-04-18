@@ -44,7 +44,7 @@ export const ActionButtons = ({ onClick }: ActionButtonsProps) => {
           variant="outline"
           asChild
         >
-          <a href={import.meta.env.VITE_GITHUB_URL} target="_blank">
+          <a href={import.meta.env.VITE_LINKEDIN_URL} target="_blank">
             <Icon icon={linkedin} />
           </a>
         </Button>
@@ -54,7 +54,7 @@ export const ActionButtons = ({ onClick }: ActionButtonsProps) => {
           variant="outline"
           asChild
         >
-          <a href={import.meta.env.VITE_LINKEDIN_URL} target="_blank">
+          <a href={import.meta.env.VITE_GITHUB_URL} target="_blank">
             <Icon icon={github} />
           </a>
         </Button>
